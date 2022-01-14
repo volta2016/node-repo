@@ -19,7 +19,7 @@
 
 V8 es el entorno de ejecución para JavaScript creado para Google Chrome. Es software libre desde 2008, está escrito en C++ y compila el código fuente JavaScript en código de máquina en lugar de interpretarlo en tiempo real.
 
-ver version de de node
+ver versión de de node
 
 comando para la consola:
 
@@ -44,4 +44,81 @@ el fetch no lo podemos ocupar dentro de node porque el fetch trabaja con una API
 - Un archivo Node.js puede importar la funcionalidad expuesta por otros archivos Node.js.
 - module.exports > estos son los modulos nativos que tiene node js
 
-En este caso estoy exportando 2 cositas y lo estoy llevando a un objeto
+En este caso estoy exportando 2 const y lo estoy llevando a un objeto
+
+```js
+const frutas = ["🥝", "🍎", "🍌", "🍓"];
+const precios = [100, 200];
+
+module.exports = {
+  frutas,
+  precios,
+};
+```
+
+Desde ahora hablaremos mucho sobre los módulos (puede que los nombre como paquete, paquetito, biblioteca, dependencia, etc).
+Además de utilizar módulos externos con NPM, también node cuenta con una gama de ellos incorporado, los puedes revisar aquí [node](https://nodejs.org/dist/latest-v16.x/docs/api/)
+
+Node tiene un montón de modulos que vienen incorporado en el, que nosotros podemos utilizar, pero además la gracia es que nosotros
+podemos utilizar estos paquetes como dependencias externas como axios, express, sql etc.
+
+## NPM
+
+- npmjs.com [npm](https://)
+- Es el administrador de paquetes o dependencias estándar para Node.js.
+- Repositorio de código de un solo idioma más grande de la Tierra.
+  axios, express, jsonwebtoken, sequelize, son algunos paquetes, dependencias (códigos) que solucionan problemas, es tu elección utilizarlos (A menos que quieras reinventar la rueda).
+- yarn [npm](https://) es una alternativa al cli de npm.
+
+Cómo voy saber yo en qué versión estoy En que versión específica estoy trabajando
+para eso existe el **package.json**
+
+Para eso cada vez que inicie un proyecto tienes que hacer tu package.json
+
+Vemos la versión
+npm -v
+6.14.15
+
+vamos a iniciar con el package.json con el siguiente comando:
+
+**npm init**
+
+Esto inicializa nuestro package.json, con un cli. Un cli quiere decir que tiene más características
+
+- Se nos creará un archivo el cual tendrá información sobre nuestro proyecto, lo más relevante en estos momentos serán sus dependencias y scripts
+- npm y yarn almacena los nombres y versiones de todos los paquetes instalados.
+
+## package-lock.json
+
+- En la versión 5, npm introdujo el archivo package-lock.json.
+- El objetivo del package-lock.json es realizar un seguimiento de la versión exacta de cada paquete que se instala, para que un producto sea 100% reproducible de la misma manera incluso si los paquetes son actualizados por sus encargados.
+- El package-lock.json establece su versión actualmente instalada de cada paquete en piedra.
+
+## npm update
+
+npm 7 actualización(opens new window)
+Desde npm versión 7 en adelante, al ejecutar npm update no cambiará el archivo package.json sino que package-lock.json llevará el control de la versión más reciente a utilizar.
+Ejecute npm list para saber la versión actual o bien abra el archivo package-lock.json.
+versionlens (opens new window)te ayuda a visualizar los paquetes actualmente utilizados.
+
+**👀 si me da un monton de peresa crear ese archivo puedo aplicar**
+
+**npm init -y**
+
+## instalar paquetes
+
+vamos a instalar esta lib para trabajar con fechas
+
+(moment js)[https://momentjs.com/]
+
+npm i moment
+
+si quieres instalar una versión específica debes escribir:
+
+@2.19.1
+
+**npm i moment@2.19.1**
+
+la carpeta **node_modules** no se comparte no se sube
+
+**package-lock.json** muestra las versiones de paquetes que hemos instalados, vamos a llevar un registro

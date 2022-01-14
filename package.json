@@ -1,0 +1,27 @@
+{
+  "name": "node-repo",
+  "version": "1.0.0",
+  "description": "node fundament",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volta2016/node-repo.git"
+  },
+  "keywords": [
+    "node-js",
+    "node",
+    "js"
+  ],
+  "author": "@volta2016",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/volta2016/node-repo/issues"
+  },
+  "homepage": "https://github.com/volta2016/node-repo#readme",
+  "dependencies": {
+    "moment": "^2.19.1"
+  }
+}
