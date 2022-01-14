@@ -39,3 +39,9 @@ especificar su nombre ejecutamos:
 el fetch no lo podemos ocupar dentro de node porque el fetch trabaja con una API externa y donde se ejecuta fetch API en el navegador, como nosotros no estamos trabajando con el navegador no podemos utilizar fetch, lo mismo para el DOM y LocalStorage
 
 ## Modulos
+
+- Node tiene un sistema de módulos incorporado.
+- Un archivo Node.js puede importar la funcionalidad expuesta por otros archivos Node.js.
+- module.exports > estos son los modulos nativos que tiene node js
+
+En este caso estoy exportando 2 cositas y lo estoy llevando a un objeto
