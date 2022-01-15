@@ -151,6 +151,18 @@ Cambia el package.json
 
 Ejecuta:
 
+va tomar todas las dependecias y las va actualizar
+
+```language-text
+npm update
+```
+
+actualiza el paquete
+
+```language-text
+npm update namepackage
+```
+
 ```language-text
 npm update
 npm list
@@ -177,3 +189,75 @@ Se instala la última versión disponible 2.29.1 (al 3 enero 2021, puede que tu 
 ```
 
 ## Locales vs Globales
+
+También podemos trabajar con dependencias globales no necesariamente
+van estar instaladas en proyecto si no que se van instalada en nuestra
+computadora
+
+- Existen paquetes o dependencias que se instalan en nuestro proyecto (como lo hemos trabajado hasta ahora)
+- Pero también existe la posibilidad de hacer instalaciones de manera global (imagina que es como instalar un programa en tu pc que puede ser accedido de cualquier parte)
+
+npm list -g
+
+```language-text
+npm i -g cowsay
+
+```
+
+Independiente de la carpeta que nos encontremos, podemos ejecutar este comando.
+
+```language-text
+cowsay javascript
+```
+
+# NPX
+
+Existe una alternativa por si quieres instalar algo global, lo busca en la web e instala la última versión que es **npx**
+
+Posiblemente se toparán con este comando a futuro (sobretodo si trabajan con React.js), bueno esto ejecuta un paquete de npm sin necesidad de instalarlo de forma global o local.
+Desinstalamos cowsay y luego intentamos ejecutarlo, esto nos dará un error:
+
+```language-text
+npm uninstall -g cowsay
+cowsay javascript
+
+```
+
+Ahora ejecute:
+
+```language-text
+npx cowsay javascript
+```
+
+tenemos algunos modulos, paquetes dependencias que podemos utlizar en modo de desarrollo
+
+## Nodemon
+
+Nodemon va reiniciar nuestro servidor cada ves que se ejecute un cambio en nuestros archivos javascript para instalarlo de como **dependencia de desarrollo** quiere decir solamente cuando nostros estamos trabajando
+
+## Scripts
+
+package.json ejemplo de scripts
+
+```language-text
+"scripts": {
+  "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+  "start": "npm run dev",
+  "unit": "jest --config test/unit/jest.conf.js --coverage",
+  "test": "npm run unit",
+  "lint": "eslint --ext .js,.vue src test/unit",
+  "build": "node build/build.js"
+}
+```
+
+Estos scripts son aplicaciones de línea de comandos. Puede ejecutarlos llamando npm run XXXX, donde "XXXX" está el nombre del comando. Ejemplo: npm run dev
+Puede usar el nombre que desee para un comando y los scripts pueden hacer literalmente cualquier cosa que desee.
+
+Configuremos nodemon para que ejecute nuestro index.js
+
+```language-text
+"scripts": {
+  "dev": "nodemon index.js",
+  "start": "node index.js"
+}
+```

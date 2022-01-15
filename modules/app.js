@@ -2,3 +2,4 @@ const { frutas, precios } = require("./frutas"); //acá no es necesario colocar 
 
 frutas.forEach((item) => console.log(item));
 console.log(precios);
+console.log("nodemon ok");
