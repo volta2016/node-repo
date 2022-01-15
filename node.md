@@ -122,3 +122,58 @@ si quieres instalar una versión específica debes escribir:
 la carpeta **node_modules** no se comparte no se sube
 
 **package-lock.json** muestra las versiones de paquetes que hemos instalados, vamos a llevar un registro
+
+por lo tanto con esta banderita **^** nosotros vamos actualizar todo después del 2 o sea va instalar la 19, la 20
+la 21 y 22 pero sin pasar 3.0.0 por que los últimos numeros que nosotros vemos son los parches, son la vulnerabilidades,
+son las pequeñas correciones.
+
+## Versiones
+
+npm-update#description(opens new window)
+semantic-versioning-using-npm(opens new window)
+~1.2.3 Actualiza las versiones parches, por ende actualizará menor > 1.3.0
+^1.2.3 Actualiza versiones menores incluyendo parches, por ende actualizará menor > 2.0.0
+Instalar versión específica:
+
+package/moment
+
+```language-text
+npm i moment@2.19.1
+```
+
+Cambia el package.json
+
+```language-text
+"dependencies": {
+"moment": "~2.19.1"
+}
+```
+
+Ejecuta:
+
+```language-text
+npm update
+npm list
+```
+
+Cómo puedes ver solo se actualizó hasta la versión 2.19.4
+Desinstalar e instalar nuevamente:
+
+```language-text
+npm uninstall moment
+npm i moment@2.19.1
+npm update
+npm list
+```
+
+- Ahora se actualizó a la versión 2.29.1 (al 3 enero 2021, puede que tu veas otra versión más reciente)
+
+- Volvamos a desinstalar e instalaremos sin una versión específica:
+
+```language-text
+npm uninstall moment
+npm i moment
+Se instala la última versión disponible 2.29.1 (al 3 enero 2021, puede que tu veas otra versión más reciente)
+```
+
+## Locales vs Globales
